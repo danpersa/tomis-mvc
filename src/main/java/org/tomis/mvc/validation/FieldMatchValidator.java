@@ -4,7 +4,8 @@ import org.apache.commons.beanutils.BeanUtils;
 
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.tomis.mvc.model.service.jpa.impl.BaseCrudServiceBean;
 import org.tomis.mvc.validation.annotation.FieldMatch;
 
@@ -15,7 +16,7 @@ import org.tomis.mvc.validation.annotation.FieldMatch;
  */
 public class FieldMatchValidator implements ConstraintValidator<FieldMatch, Object> {
 
-    private static Logger logger = Logger.getLogger(BaseCrudServiceBean.class);
+    private static Logger logger = LoggerFactory.getLogger(BaseCrudServiceBean.class);
     private String firstFieldName;
     private String secondFieldName;
 

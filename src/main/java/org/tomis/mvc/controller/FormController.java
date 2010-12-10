@@ -9,7 +9,6 @@ import java.util.Date;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -19,8 +18,8 @@ import javax.validation.Validation;
 import javax.validation.Validator;
 import javax.validation.ValidatorFactory;
 import javax.validation.groups.Default;
-
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.tomis.mvc.controller.binder.Binder;
 import org.tomis.mvc.controller.helper.RequestHelper;
 import org.tomis.mvc.model.dto.SessionForm;
@@ -38,7 +37,7 @@ import org.tomis.mvc.validation.ErrorAppender;
  */
 public abstract class FormController<CommandObject extends Dto> extends PageFragmentController {
 
-    private static Logger logger = Logger.getLogger(FormController.class);
+    private static Logger logger = LoggerFactory.getLogger(FormController.class);
     public static final String COMMAND_OBJECT_NAME_PARAM = "command-object-name";
     public static final String SUBMIT_PARAMETER_NAME = "submit-parameter-name";
     public static final String IS_SESSION_FORM_PARAM = "is-session-form";

@@ -1,13 +1,12 @@
 package org.tomis.mvc.controller;
 
 import java.io.IOException;
-
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Project: tomis-mvc
@@ -16,7 +15,7 @@ import org.apache.log4j.Logger;
  */
 public abstract class PageController extends PageFragmentController {
 
-    private static Logger logger = Logger.getLogger(PageController.class);
+    private static Logger logger = LoggerFactory.getLogger(PageController.class);
     private String view;
 
     @Override

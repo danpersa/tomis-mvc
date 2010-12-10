@@ -3,8 +3,8 @@ package org.tomis.mvc.model.service.jpa.impl;
 import java.io.Serializable;
 import java.util.List;
 import java.util.Map;
-
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.tomis.mvc.model.eao.BaseEao;
 import org.tomis.mvc.model.entity.PersistentEntity;
 import org.tomis.mvc.model.service.jpa.BaseCrudService;
@@ -16,7 +16,7 @@ import org.tomis.mvc.model.service.jpa.BaseCrudService;
  */
 public abstract class BaseCrudServiceBean<BusinessObject extends PersistentEntity> implements BaseCrudService<BusinessObject> {
 
-    private static Logger logger = Logger.getLogger(BaseCrudServiceBean.class);
+    private static Logger logger = LoggerFactory.getLogger(BaseCrudServiceBean.class);
 
     @Override
     public List<BusinessObject> all() {

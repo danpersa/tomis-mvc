@@ -2,14 +2,13 @@ package org.tomis.mvc.controller;
 
 import java.io.IOException;
 import java.util.List;
-
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Project: tomis-mvc
@@ -18,7 +17,7 @@ import org.apache.log4j.Logger;
  */
 public abstract class PageFragmentController extends HttpServlet {
 
-    private static final Logger logger = Logger.getLogger(PageFragmentController.class);
+    private static final Logger logger = LoggerFactory.getLogger(PageFragmentController.class);
     public static final String REDIRECT_URL = "redirect-url";
 
     @Override

@@ -4,7 +4,6 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
@@ -12,8 +11,8 @@ import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
-
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.tomis.mvc.model.eao.BaseEao;
 import org.tomis.mvc.model.entity.PersistentEntity;
 
@@ -24,7 +23,7 @@ import org.tomis.mvc.model.entity.PersistentEntity;
  */
 public abstract class BaseEaoBean<BusinessObject extends PersistentEntity> implements BaseEao<BusinessObject> {
 
-    private static Logger logger = Logger.getLogger(BaseEaoBean.class);
+    private static Logger logger = LoggerFactory.getLogger(BaseEaoBean.class);
 
     @PersistenceContext
     protected EntityManager em;

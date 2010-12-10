@@ -35,6 +35,32 @@ public class Pair<T, R> {
     }
 
     @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Pair<T, R> other = (Pair<T, R>) obj;
+        if (this.theKey != other.theKey && (this.theKey == null || !this.theKey.equals(other.theKey))) {
+            return false;
+        }
+        if (this.theValue != other.theValue && (this.theValue == null || !this.theValue.equals(other.theValue))) {
+            return false;
+        }
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 5;
+        hash = 71 * hash + (this.theKey != null ? this.theKey.hashCode() : 0);
+        hash = 71 * hash + (this.theValue != null ? this.theValue.hashCode() : 0);
+        return hash;
+    }
+
+    @Override
     public String toString() {
         return "Pair{" + "[theKey=" + theKey + "][theValue=" + theValue + "]}";
     }

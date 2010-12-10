@@ -2,11 +2,10 @@ package org.tomis.mvc.controller.binder;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.Date;
-
 import javax.validation.ConstraintViolation;
-
 import org.apache.commons.beanutils.BeanUtils;
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.tomis.mvc.controller.converter.StringToDateConverter;
 import org.tomis.mvc.controller.converter.StringToIntegerConverter;
 import org.tomis.mvc.controller.converter.StringToLongConverter;
@@ -24,7 +23,7 @@ import org.tomis.mvc.validation.ErrorAppender;
  */
 public class Binder<CommandObject extends Dto> {
 
-    private static Logger logger = Logger.getLogger(Binder.class);
+    private static Logger logger = LoggerFactory.getLogger(Binder.class);
 
     public void bind(CommandObject commandObject, String field, Object value) {
         if (value == null) {
