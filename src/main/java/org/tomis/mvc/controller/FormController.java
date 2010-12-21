@@ -149,6 +149,10 @@ public abstract class FormController<CommandObject extends Dto> extends PageFrag
         }
         logger.info("Processing command object: " + commandObject);
         processCommandObject(request, response, commandObject);
+        if (getRedirectOnSuccessUrl() != null) {
+            logger.info("redirect to: " + getRedirectOnSuccessUrl());
+            redirect(request, getRedirectOnSuccessUrl());
+        }
         if (isRedirect(request)) {
             logger.info("redirect");
             return;
@@ -278,11 +282,6 @@ public abstract class FormController<CommandObject extends Dto> extends PageFrag
         if (getEditableService() != null) {
             logger.info("CommandObject to save: " + commandObject);
             getEditableService().save(commandObject);
-        }
-        logger.info("redirect to: " + getRedirectOnSuccessUrl());
-        if (getRedirectOnSuccessUrl() != null) {
-            logger.info("redirect to: " + getRedirectOnSuccessUrl());
-            redirect(request, getRedirectOnSuccessUrl());
         }
     }
 
