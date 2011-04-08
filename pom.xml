@@ -46,7 +46,7 @@
         <dependency>
             <groupId>org.glassfish.extras</groupId>
             <artifactId>glassfish-embedded-all</artifactId>
-            <version>3.0</version>
+            <version>3.0.1</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
@@ -75,11 +75,20 @@
                     <artifactId>validation-api</artifactId>
                 </exclusion>
             </exclusions>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+<!--            <version>1.5.8</version>-->
+            <version>1.6.1</version>
+            <scope>provided</scope>
+            <type>jar</type>
         </dependency>
 <!--        <dependency>
             <groupId>log4j</groupId>
             <artifactId>log4j</artifactId>
-            <version>1.2.14</version>
+            <version>${log4v.version}</version>
             <type>jar</type>
         </dependency>-->
     </dependencies>
@@ -97,4 +106,7 @@
         </plugins>
         <finalName>tomis-mvc</finalName>
     </build>
+    <properties>
+        <log4v.version>1.2.14</log4v.version>
+    </properties>
 </project>

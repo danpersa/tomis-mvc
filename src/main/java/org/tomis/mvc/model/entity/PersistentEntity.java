@@ -12,6 +12,10 @@ public interface PersistentEntity<PK extends Serializable> extends Serializable 
 
     void setId(PK key);
 
+    void setVersion(Long version);
+
+    Long getVersion();
+
     boolean isNew();
 
     Class getEntityClass();

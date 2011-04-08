@@ -9,7 +9,7 @@ package org.tomis.mvc.model.eao;
 import java.io.Serializable;
 import java.util.List;
 import java.util.Map;
-import javax.ejb.Local;
+import javax.persistence.EntityManager;
 
 /**
  *
@@ -17,8 +17,7 @@ import javax.ejb.Local;
  * @author Dan Persa
  * @since 19.03.2008
  */
-@Local
-public interface BaseEao<BusinessObject extends Serializable> {
+public interface BaseEao<BusinessObject extends Serializable> extends Serializable {
 
     BusinessObject get(Long id);
 
@@ -38,7 +37,7 @@ public interface BaseEao<BusinessObject extends Serializable> {
 
     List<BusinessObject> all();
 
-    BusinessObject save(BusinessObject businessObject);
+    BusinessObject create(BusinessObject businessObject);
 
     BusinessObject update(BusinessObject businessObject);
 
@@ -53,4 +52,6 @@ public interface BaseEao<BusinessObject extends Serializable> {
     Long count(Map<String, Serializable> filters);
 
     Integer getMaxId();
+
+    void flush();
 }

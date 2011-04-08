@@ -11,7 +11,7 @@ import org.tomis.mvc.model.entity.PersistentEntity;
  * @since 20.09.2009
  * @author Dan Persa
  */
-public interface BaseCrudService<BusinessObject extends PersistentEntity> {
+public interface BaseCrudService<BusinessObject extends PersistentEntity> extends Serializable {
 
     List<BusinessObject> all();
 
@@ -31,6 +31,10 @@ public interface BaseCrudService<BusinessObject extends PersistentEntity> {
 
     BusinessObject save(BusinessObject businessObject) throws Exception;
 
+    BusinessObject create(BusinessObject businessObject) throws Exception;
+
+    BusinessObject update(BusinessObject businessObject) throws Exception;
+
     void delete(BusinessObject businessObject);
 
     Long count();
@@ -40,4 +44,6 @@ public interface BaseCrudService<BusinessObject extends PersistentEntity> {
     Long count(List<String> fields, List<Serializable> values);
 
     Long count(Map<String, Serializable> filters);
+
+    void flush();
 }

@@ -12,6 +12,9 @@ public class Paginator implements Dto {
     private long page;
     private long nrOfItems;
 
+    public Paginator() {
+    }
+
     public Paginator(long pageSize, long currentPage, long nrOfItems) {
         this.pageSize = pageSize;
         this.page = currentPage;
@@ -24,7 +27,7 @@ public class Paginator implements Dto {
         }
     }
 
-    public final long getLastPage() {
+    public long getLastPage() {
         long x = ( nrOfItems / pageSize );
         if (nrOfItems % pageSize == 0) {
             return x;
